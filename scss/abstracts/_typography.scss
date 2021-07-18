@@ -1,0 +1,13 @@
+//# Body Copy
+$regularSize: 1.2rem;
+$headingSize: 2rem;
+
+//# Font
+$familyStack: "Kumbh Sans", sans-serif;
+$weights: (
+  regular: 400,
+  bold: 700,
+);
+
+//# Default
+$defaultFontRule: map-get($weights, regular) $regularSize $familyStack;

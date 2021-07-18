@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(#af67e9, #6565e7);
+  font-size: 62.5%;
+}
+body * {
+  font: 400 1.2rem "Kumbh Sans", sans-serif;
+  color: #787887;
+}
+
+/*# sourceMappingURL=style.css.map */

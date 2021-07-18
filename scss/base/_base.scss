@@ -1,0 +1,18 @@
+@use "../abstracts/colors";
+@use "../abstracts/typography";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  background: linear-gradient(colors.$softViolet, colors.$softBlue);
+  font-size: 62.5%;
+
+  * {
+    font: typography.$defaultFontRule;
+    color: colors.$darkGrayishBlue;
+  }
+}
