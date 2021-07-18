@@ -5,3 +5,10 @@ $breakpoints: ();
     @content;
   }
 }
+
+@mixin displayFlex($direction, $wrap, $alignItems, $justContent) {
+  display: flex;
+  flex-flow: $direction $wrap;
+  align-items: $alignItems;
+  justify-content: $justContent;
+}

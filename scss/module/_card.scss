@@ -1,0 +1,60 @@
+@use "../abstracts/mixins";
+@use "../abstracts/colors";
+
+.main__card {
+  background: white;
+  flex-basis: 90%;
+  @include mixins.displayFlex(column, nowrap, center, center);
+  border-radius: 2rem;
+
+  @at-root .main__card__illustration__img--desktop,
+    .main__card__faq__qa__answer {
+    display: none;
+  }
+
+  @at-root .main__card__faq {
+    min-width: 100%;
+    @include mixins.displayFlex(column, nowrap, flex-start, center);
+    padding: 0 1.5em 4em 1.5em;
+  }
+
+  @at-root .main__card__faq__title {
+    align-self: center;
+  }
+
+  @at-root .a2 {
+    display: block;
+  }
+
+  @at-root .main__card__faq__qa {
+    min-width: 100%;
+    padding: 1em 0;
+    cursor: pointer;
+    border-bottom: 1.6px solid colors.$lightGrayishBlue;
+  }
+
+  @at-root .main__card__faq__qa__question {
+    min-width: 100%;
+    @include mixins.displayFlex(row, nowrap, center, space-between);
+
+    &::after {
+      content: url("../images/icon-arrow-down.svg");
+    }
+  }
+
+  @at-root .main__card__faq__qa__answer {
+    max-width: 80%;
+  }
+
+  @at-root .main__card__illustration {
+    min-width: 100%;
+    height: 130px;
+    @include mixins.displayFlex(row, nowrap, center, center);
+  }
+
+  @at-root .main__card__illustration__img--mobile {
+    position: absolute;
+    transform: translate(-15px, -75px);
+    filter: drop-shadow(0 30px 0.5px colors.$transparentSoftBlue);
+  }
+}

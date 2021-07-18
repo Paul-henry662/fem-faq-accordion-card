@@ -1,18 +1,31 @@
 @use "../abstracts/colors";
 @use "../abstracts/typography";
 
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 62.5%;
 }
 body {
   min-height: 100vh;
-  background: linear-gradient(colors.$softViolet, colors.$softBlue);
-  font-size: 62.5%;
+  background: linear-gradient(colors.$softViolet, colors.$softBlue) no-repeat;
 
   * {
     font: typography.$defaultFontRule;
-    color: colors.$darkGrayishBlue;
+    color: colors.$veryDarkGrayishBlue;
   }
+}
+h1 {
+  font-size: typography.$headingSize;
+  font-weight: map-get(typography.$weights, bold);
+  margin-bottom: 0.5em;
+}
+h2 {
+  margin-bottom: 0.5em;
+}
+p {
+  color: colors.$darkGrayishBlue;
 }
