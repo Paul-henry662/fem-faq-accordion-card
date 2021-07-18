@@ -1,6 +1,7 @@
-@use "../abstracts/mixins";
+@use "./abstracts/mixins";
 
 .main {
   min-height: 100vh;
+  width: 100%;
   @include mixins.displayFlex(row, nowrap, center, center);
 }

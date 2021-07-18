@@ -1,0 +1,77 @@
+@use "./abstracts/typography";
+@use "./abstracts/mixins";
+
+.main__card {
+  @include mixins.mediaQuery(tabletLandscape) {
+    flex-direction: row;
+    flex-basis: 80%;
+    height: 500px;
+
+    @at-root .main__card__illustration,
+      .main__card__faq {
+      min-width: auto;
+      height: 100%;
+      overflow: hidden;
+    }
+    @at-root .main__card__illustration {
+      flex-basis: 45%;
+      background: url("../images/bg-pattern-desktop.svg") no-repeat;
+      background-position: 106% 70%;
+
+      &::after {
+        content: url("../images/illustration-box-desktop.svg");
+        position: absolute;
+        transform: translate(-209px, 50px);
+        animation: box-animation 2s ease;
+        animation-iteration-count: infinite;
+      }
+    }
+    @at-root .main__card__faq {
+      flex-basis: 55%;
+      padding: 5em 12% 5em 5%;
+    }
+
+    @at-root .main__card__illustration__img--mobile {
+      display: none;
+    }
+    @at-root .main__card__illustration__img--desktop {
+      display: block;
+    }
+
+    @at-root .main__card__faq__title {
+      text-align: left;
+    }
+  }
+
+  @include mixins.mediaQuery(laptop) {
+    flex-basis: 65%;
+  }
+}
+
+.main__card__faq__qa--active {
+  .main__card__faq__qa__question {
+    font-weight: map-get(typography.$weights, bold);
+
+    &::after {
+      transform: scaleY(-1);
+    }
+  }
+
+  .main__card__faq__qa__answer {
+    max-height: 100px;
+  }
+}
+@keyframes box-animation {
+  0% {
+    transform: translate(-209px, 50px);
+  }
+  50% {
+    transform: translate(-209px, 40px);
+  }
+  60% {
+    transform: translate(-209px, 40px);
+  }
+  100% {
+    transform: translate(-209px, 50px);
+  }
+}

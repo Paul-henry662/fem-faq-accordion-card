@@ -6,29 +6,32 @@
   flex-basis: 90%;
   @include mixins.displayFlex(column, nowrap, center, center);
   border-radius: 2rem;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.17);
 
-  @at-root .main__card__illustration__img--desktop,
-    .main__card__faq__qa__answer {
+  @at-root .main__card__illustration__img--desktop {
+    position: relative;
+    right: 60px;
     display: none;
+  }
+
+  @at-root .main__card__faq__qa__answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.75s ease;
   }
 
   @at-root .main__card__faq {
     min-width: 100%;
-    @include mixins.displayFlex(column, nowrap, flex-start, center);
     padding: 0 1.5em 4em 1.5em;
   }
 
   @at-root .main__card__faq__title {
-    align-self: center;
-  }
-
-  @at-root .a2 {
-    display: block;
+    text-align: center;
   }
 
   @at-root .main__card__faq__qa {
     min-width: 100%;
-    padding: 1em 0;
+    padding: 1.4em 0;
     cursor: pointer;
     border-bottom: 1.6px solid colors.$lightGrayishBlue;
   }
@@ -39,6 +42,8 @@
 
     &::after {
       content: url("../images/icon-arrow-down.svg");
+      transform: scaleY(1);
+      transition: transform 0.5s ease;
     }
   }
 
@@ -56,5 +61,26 @@
     position: absolute;
     transform: translate(-15px, -75px);
     filter: drop-shadow(0 30px 0.5px colors.$transparentSoftBlue);
+    animation: illustration-animation 2.5s ease;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes illustration-animation {
+    0% {
+      transform: translate(-15px, -75px);
+      filter: drop-shadow(0 30px 0.5px colors.$transparentSoftBlue);
+    }
+    50% {
+      transform: translate(-15px, -90px);
+      filter: drop-shadow(0 45px 0.5px colors.$lightTransparentSoftBlue);
+    }
+    60% {
+      transform: translate(-15px, -90px);
+      filter: drop-shadow(0 45px 0.5px colors.$lightTransparentSoftBlue);
+    }
+    100% {
+      transform: translate(-15px, -75px);
+      filter: drop-shadow(0 30px 0.5px colors.$transparentSoftBlue);
+    }
   }
 }

@@ -1,7 +1,10 @@
-$breakpoints: ();
+$breakpoints: (
+  tabletLandscape: 1024px,
+  laptop: 1280px,
+);
 
 @mixin mediaQuery($size) {
-  @media screen and (min-width: map-get($breakpoints, $size)) {
+  @media (min-width: map-get($breakpoints, $size)) {
     @content;
   }
 }
